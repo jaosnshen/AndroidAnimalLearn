@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import animal.com.shenhangye.constomanimaldemo.activity.CodeAnimalActivity;
 import animal.com.shenhangye.constomanimaldemo.activity.PaintDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.paintDemo).setOnClickListener(this);
+        findViewById(R.id.codeDemo).setOnClickListener(this);
     }
 
     @Override
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent mIntent;
         if (id==R.id.paintDemo){
             mIntent=new Intent(MainActivity.this,PaintDemoActivity.class);
+            startActivity(mIntent);
+        }else if (id==R.id.codeDemo){
+            mIntent=new Intent(MainActivity.this,CodeAnimalActivity.class);
             startActivity(mIntent);
         }
     }
